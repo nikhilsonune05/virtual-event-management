@@ -25,9 +25,10 @@ const User = sequelize.define('User', {
   role: {
     type: DataTypes.ENUM(...USER_ROLES),
     allowNull: false
-  },
+  }
+}, {
   timestamps: true,
-  tableName: 'users',
+  tableName: 'users'
 });
 
 module.exports = User;
