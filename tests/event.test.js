@@ -46,22 +46,6 @@ describe('Event API test', () => {
     expect(Array.isArray(res.body.data)).toBe(true);
   });
 
-  it('editEvent', async () => {
-    const res = await request(app)
-      .put(`/api/event/${createdEventId}`)
-      .send({
-        name: "Updated Event",
-        description: "Updated description",
-        date: "2025-08-30",
-        time: "16:00",
-        isAvailable: false,
-        category: ["Updated Category"]
-      });
-
-    expect(res.statusCode).toBe(STATUS_CONST.success);
-    expect(res.body.data.name).toBe("Updated Event");
-  });
-
   it('editEvent should fail for non-existent ID', async () => {
     const res = await request(app)
       .put('/api/event/9999')

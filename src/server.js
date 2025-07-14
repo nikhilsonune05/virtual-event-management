@@ -21,7 +21,6 @@ const PORT = process.env.PORT || 3000;
     await sequelize.authenticate();
     console.log('Database connection established');
 
-    // Force clean all tables
     await sequelize.sync({ force: true, logging: console.log });
     console.log('Database synced');
 

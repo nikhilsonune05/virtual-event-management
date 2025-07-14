@@ -67,10 +67,8 @@ const editEvent = async (req, res) => {
       return res.status(STATUS_CONST.not_found_error).json({ message: MSG_CONST.not_found_error });
     }
 
-    // Update basic fields
     await event.update({ name, description, date, time, isAvailable });
 
-    // Handle categories if provided
     if (category) {
       let categoryRecords = [];
 
